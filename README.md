@@ -29,18 +29,17 @@
 </p>
 
 <p align="center">
-  Supervisor: Anastasios Tsilikounas, Laboratory Teaching Staff
+  Supervisor: Eleni Tsalera, Laboratory Teaching Staff
 </p>
 <p align="center">
-  <a href="https://ice.uniwa.gr/en/emd_person/anastasios-tsilikounas/" target="_blank">UNIWA Profile</a> ·
-  <a href="https://www.linkedin.com/in/anastasios-tsilikounas-31111566/" target="_blank">LinkedIn</a>
+  <a href="https://www.researchgate.net/profile/Eleni-Tsalera-2" target="_blank">UNIWA Profile</a>
 </p>
 
 <p align="center">
-  Co-supervisor: Georgios Antoniou, Laboratory Teaching Staff
+  Co-supervisor: Michalis Diamantopoulos, Lecturer in Applications
 </p>
 <p align="center">
-  <a href="https://ice.uniwa.gr/en/emd_person/georgios-antoniou/" target="_blank">UNIWA Profile</a>
+  <a href="https://ice.uniwa.gr/emd_person/22674/" target="_blank">UNIWA Profile</a>
 </p>
 
 <p align="center">
@@ -51,9 +50,7 @@
 
 # Project Overview
 
-This document is a laboratory report for the **Circuit Theory** course within the **Department of Informatics and Computer Engineering** at the **University of West Attica**.
-
-The project focuses on the **study and analysis of the resonance effect in RLC circuits**. It explores the behavior of **resistors, inductors, and capacitors** when connected in **series** and **parallel** configurations across varying frequencies.
+This project investigates the behavior of **R-C (Resistor–Capacitor) circuits**, with emphasis on **smoothing filters** and **scissors (clipping) circuits**. The study combines **theoretical analysis**, **software simulations using Multisim**, and **hands-on laboratory experiments** to validate circuit behavior under various operating conditions.
 
 ---
 
@@ -68,135 +65,236 @@ The project focuses on the **study and analysis of the resonance effect in RLC c
 | 3 | `docs/` | Theoretical documentation |
 | 3.1 | `docs/RC-Filters-and-Scissors.pdf` | Theory (English) |
 | 3.2 | `docs/RC-Φίλτρα-και-Ψαλλιδιστές.pdf` | Theory (Greek) |
-| 4 | `filterr/LabPNG/` | RC filter lab experiment images |
-| 4.1 | `filterr/Multisim/` | RC filter Multisim project files |
-| 4.2 | `filterr/MultisimPNG/` | RC filter Multisim screenshots |
-| 4.3 | `filterr/` | Graphs and lab sheets (Filtro_Graph.png, FylloErgasthriou*.png, Q4.png, Q5.png, Q5Graph.png) |
-| 5 | `scissorss/LabPNG/` | Scissors (waveform shaping) lab images |
-| 5.1 | `scissorss/Multisim/` | Scissors lab Multisim project files |
-| 5.2 | `scissorss/MultisimPNG/` | Scissors lab Multisim screenshots |
-| 5.3 | `scissorss/` | Graphs and lab sheets (FylloErgasthriou*.png, psali_*.png, Psali_*.png, Q1_*.png) |
+| 4 | `filter/LabPNG/` | RC filter lab experiment images |
+| 4.1 | `filter/Multisim/` | RC filter Multisim project files |
+| 4.2 | `filter/MultisimPNG/` | RC filter Multisim screenshots |
+| 4.3 | `filter/` | Graphs and lab sheets (Filtro_Graph.png, FylloErgasthriou*.png, Q4.png, Q5.png, Q5Graph.png) |
+| 5 | `scissors/LabPNG/` | Scissors (waveform shaping) lab images |
+| 5.1 | `scissors/Multisim/` | Scissors lab Multisim project files |
+| 5.2 | `scissors/MultisimPNG/` | Scissors lab Multisim screenshots |
+| 5.3 | `scissors/` | Graphs and lab sheets (FylloErgasthriou*.png, psali_*.png, Psali_*.png, Q1_*.png) |
 | 6 | `README.md` | Repository overview and instructions |
 
 ---
 
-## Key Contents
+## Project Structure
 
-The report is structured into:
+The report is divided into two main sections:
 
-- **Theoretical Analysis**  
-- **Software Simulations** using *Multisim*  
-- **Experimental Laboratory Results**
+### 1. R-C Smoothing Filter Circuits
+Analysis of smoothing filter behavior with focus on **ripple voltage (Vₖ)** under varying parameters:
+- Input frequency
+- Resistance values
+- Capacitance values  
+
+The effect of each parameter on output signal stability is examined through calculations, simulations, and measurements.
 
 ---
 
-## 1. RLC Series Circuit
+### 2. Scissors (Clipping) Circuits
+Study of clipping circuit configurations, including:
+- Standard scissor circuits  
+- Circuits with **DC voltage offset**  
+- **Inverted clipping (shear) circuits**
 
-**Theory:**  
-Analysis of the frequency at which the **inductive reactance (Xₗ)** and **capacitive reactance (Xc)** cancel each other out.
+The output waveform distortion and voltage limiting behavior are analyzed.
 
-**Key Observations:**
+---
 
-- The **impedance (Z)** becomes equal to the **ohmic resistance (R)** at resonance.
-- **Maximum current flow** occurs at the resonant frequency.
-- **Overvoltage phenomena** are observed across the capacitor and inductor.
+## Laboratory Equipment Used
 
-**Formula Used:**  
+- **Breadboard**: M21-7000A Analog & Digital Training System  
+- **Power Supply**: DC Power Supply  
+- **Multimeter**: MCP MT8045 Digital Multimeter Bench  
+- **Oscilloscope**: HAMEG HM303-6 or HM203-5  
+- **Components**:
+  - Silicon diode  
+  - Resistors: **4.7 kΩ**, **10 kΩ**  
+  - Capacitor: **0.1 µF**
+
+---
+
+## Experimental Example: 1 kHz Smoothing Filter
+
+A representative experiment involves a smoothing filter powered by a **6 V<sub>p-p</sub>** input signal at **1 kHz**.
+
+### Theoretical Foundation
+The ripple voltage **Vₖ** is calculated using:
 
 $$
-f_r = \frac{1}{2\pi\sqrt{LC}}
+Vₖ = Vₚ / (f · R · C)
 $$
 
-Where:  
-- \(f_r\) = resonant frequency  
-- \(L\) = inductance  
-- \(C\) = capacitance
+For:
+- f = 1 kHz  
+- R = 4.7 kΩ  
+- C = 0.1 µF  
 
 
----
+The theoretical ripple voltage is:
 
-## 2. RLC Parallel Circuit
-
-- Theoretical solutions and **simulation results** for parallel RLC configurations.  
-- Detailed analysis provided in the report (pages 12–17).
-
----
-
-## Laboratory Equipment
-
-The experimental work utilized the following tools:
-
-- **Multimeters** (Analog and Digital)  
-- **Oscilloscope**  
-- **Breadboard**  
-- **Passive Components:**  
-  - Resistors  
-  - Capacitors  
-  - Inductors
+$$
+Vₖ ≈ 2 V
+$$
 
 ---
 
-# Installation & Setup Guide
+## Procedure Summary
 
-This repository contains laboratory simulations and analysis for **Circuit Theory**, focusing on **RLC series and parallel circuits** and their resonance behavior.  
+1. **Setup**  
+   - Set input frequency to **1000 Hz**  
+   - Adjust the input signal to **6 V<sub>p-p</sub>** using the oscilloscope  
 
-All simulations are implemented in **NI Multisim**.
+2. **Assembly**  
+   - Connect the silicon diode in series with the source  
+   - Place the **4.7 kΩ resistor** after the diode  
+
+3. **Filtering**  
+   - Connect the **0.1 µF capacitor** in parallel with the resistor  
+
+4. **Measurement**  
+   - Use **Channel B** of the oscilloscope to measure the output across the capacitor  
+
+---
+
+## Contents
+
+- **Theoretical Solution**  
+  Mathematical analysis and circuit schematics  
+
+- **Simulated Solution**  
+  Waveforms and measurements obtained using **Multisim**  
+
+- **Experimental Solution**  
+  Step-by-step laboratory procedures and recorded measurements
+
+---
+
+# Installation & Setup Guide  
+
+This guide explains how to install, set up, and use the **RC-Filters-and-Scissors** laboratory project.  
+The repository contains **assignment material**, **theoretical notes**, **Multisim simulations**, **graphs**, and **laboratory results** related to **R-C smoothing filters** and **scissors (clipping) circuits**.
 
 ---
 
 ## Prerequisites
 
-### Required Software
-- **NI Multisim 14** (or later)  
-  Ensure your system meets the requirements for running `.ms14` files.  
-  Download from [NI Multisim](https://www.ni.com/en-us/shop/electronic-test-instrumentation/application-software-for-electronic-test-and-instrumentation-category/what-is-multisim.html).
-
-### Optional Software
-- **PDF Viewer** for documentation: `Coordination.pdf` / `Συντονισμός.pdf`
+Before working with this project, make sure the following requirements are met.
 
 ---
 
-## Installation Steps
+### 1. Software Requirements
+
+#### NI Multisim
+- **NI Multisim 14 or newer**
+- Required to:
+  - Open and run RC filter simulations
+  - Simulate scissors (clipping) circuits
+  - Observe waveforms, ripple voltage, and clipping behavior
+
+Used in folders:
+- `filter/Multisim/`
+- `scissors/Multisim/`
+
+---
+
+#### PDF Reader
+- Any modern PDF reader (Adobe Reader, browser-based PDF viewer, etc.)
+- Required to open:
+  - Assignment descriptions
+  - Theoretical documentation (English & Greek)
+
+---
+
+#### Image Viewer
+- Any standard image viewer
+- Required for viewing:
+  - Lab photos
+  - Graphs
+  - Screenshots (`.png` files)
+
+---
+
+### 2. Hardware Requirements (Optional – Physical Lab)
+
+Required **only if** you plan to repeat the experiments in a real laboratory environment:
+
+- **Analog & Digital Training System:** M21-7000A  
+- **DC Power Supply**
+- **Digital Multimeter:** MCP MT8045  
+- **Oscilloscope:** HAMEG HM303-6 or HM203-5  
+- **Electronic Components**
+  - Silicon diode  
+  - Resistors: **4.7 kΩ**, **10 kΩ**  
+  - Capacitor: **0.1 µF**
+
+> Hardware is **not required** for studying theory or running simulations.
+
+---
+
+## Installation & Setup
 
 ### 1. Clone the Repository
+
 ```bash
-git clone https://github.com/Circuit-Theory/Coordination.git
+git clone https://github.com/Electronics-aka-Uniwa/RC-Filters-and-Scissors.git
+cd RC-Filters-and-Scissors
+
 ```
 
-### 2. Navigate to Project Directory
+### 2. Open Theoretical Documentation
+Navigate to the `docs/` directory and open:
+- English: `RC-Filters-and-Scissors.pdf`
+- Greek: `RC-Φίλτρα-και-Ψαλλιδιστές.pdf`
+These documents explain:
+- RC smoothing filter operation
+- Ripple voltage theory
+- Clipping and voltage limiting circuits
+
+### 3. Review Assignment Instructions
+Open the files in the `assign/` folder:
+- English: `Exercise-6th-RC-Filters-and-Scissors.pdf`
+- Greek: `Άσκηση-6η-Φίλτρα-RC-και-Ψαλλιδιστές.pdf`
+
+Follow these documents for:
+- Required circuits
+- Measurement steps
+- Expected analysis and conclusions
+
+### 4. Run Multisim Simulations
+#### RC Filters
+1. Open NI Multisim.
+2. Navigate to:
 ```bash
-cd Coordination
+filter/Multisim/
 ```
-Ensure the following folder structure exists:
+3. Open the provided Multisim project files.
+4. Run the simulation.
+5. Observe:
+    - Output smoothing
+    - Ripple voltage variation
+    - Effect of R, C, and frequency changes
+
+#### Scissors (Clipping) Circuits
+1. Open NI Multisim.
+2. Navigate to:
 ```bash
-assign/
-docs/
-multisim/
+scissors/Multisim/
 ```
+3. Open the circuit files.
+4. Run the simulation.
+5. Observe:
+    - Clipped waveforms
+    - Voltage limiting levels
+    - Effect of DC offset and inversion
 
----
-
-## Multisim Simulation Files
-
-The repository includes two key simulation files:
-
-| File  | Description |
-|------:|-------------|
-| multisim/CoordinationSerial.ms14 |  RLC series circuit simulation |
-| multisim/CoordinationParallel.ms14 |  RLC parallel circuit simulation |
-
-
-### 3. Open a Simulation in Multisim
-- Launch NI Multisim.
-- Select File → Open.
-- Navigate to the `multisim/` folder.
-- Open the desired `.ms14` file (series or parallel circuit).
-- Wait for the circuit topology to load.
-
----
-
-## Open the Documentation
-1. Navigate to the `docs/` directory
-2. Open the report corresponding to your preferred language:
-    - English: `Coordination.pdf`
-    - Greek: `Συντονισμός.pdf`
+### 5. View Experimental Results
+- Graphs & Lab Sheets
+  - `filter/*.png`
+  - `scissors/*.png`
+- Multisim Screenshots
+  - `filter/MultisimPNG/`
+  - `scissors/MultisimPNG/`
+- Lab Photos
+  - `filter/LabPNG/`
+  - `scissors/LabPNG/`
