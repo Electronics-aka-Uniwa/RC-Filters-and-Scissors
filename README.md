@@ -246,6 +246,7 @@ cd RC-Filters-and-Scissors
 Navigate to the `docs/` directory and open:
 - English: `RC-Filters-and-Scissors.pdf`
 - Greek: `RC-Φίλτρα-και-Ψαλλιδιστές.pdf`
+
 These documents explain:
 - RC smoothing filter operation
 - Ripple voltage theory
