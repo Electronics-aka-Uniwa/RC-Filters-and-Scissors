@@ -29,7 +29,15 @@
 </p>
 
 <p align="center">
-  Supervisor: Eleni Tsalera, Laboratory Teaching Staff
+  Supervisor: Ioannis Amorginos, Applications Lecturer
+</p>
+<p align="center">
+  <a href="https://ice.uniwa.gr/en/emd_person/ioannis-amorginos/" target="_blank">UNIWA Profile</a> ·
+  <a href="https://www.linkedin.com/in/%CE%B1%CE%BC%CE%BF%CF%81%CE%B3%CE%AF%CE%BD%CE%BF%CF%82-%CE%B3%CE%B9%CE%AC%CE%BD%CE%BD%CE%B7%CF%82-7185b088/" target="_blank">LinkedIn</a>
+</p>
+
+<p align="center">
+  Co-supervisor: Eleni Tsalera, Laboratory Teaching Staff
 </p>
 <p align="center">
   <a href="https://www.researchgate.net/profile/Eleni-Tsalera-2" target="_blank">UNIWA Profile</a>
